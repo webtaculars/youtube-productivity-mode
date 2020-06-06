@@ -1,0 +1,1 @@
+# Blur Youtube Thumbnails

@@ -1,0 +1,7 @@
+.ytd-thumbnail > .yt-img-shadow {
+  filter: blur(10px);
+}
+
+[page-subtype="channels"] .ytd-thumbnail > .yt-img-shadow {
+  filter: blur(0px);
+}
