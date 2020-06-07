@@ -1,7 +1,26 @@
+:root {
+  --blur-value-home: blur(0px);
+  --blur-value-channels: blur(0px);
+  --blur-value-subscriptions: blur(0px);
+  --blur-value-history: blur(0px);
+}
+
 .ytd-thumbnail > .yt-img-shadow {
-  filter: blur(10px);
+  filter: blur(0px);
+}
+
+[page-subtype="home"] .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-home);
 }
 
 [page-subtype="channels"] .ytd-thumbnail > .yt-img-shadow {
-  filter: blur(0px);
+  filter: var(--blur-value-channels);
+}
+
+[page-subtype="subscriptions"] .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-subscriptions);
+}
+
+[page-subtype="history"] .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-history);
 }

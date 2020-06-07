@@ -1,13 +1,18 @@
 {
   "manifest_version": 2,
-  "name": "Blur thumbnails",
-  "description": "Blur youtube thumbnails",
+  "name": "YT Clickbait Blocker",
+  "description": "Blur clickbaity thumbnails and block ads on YouTube",
   "version": "1.0",
   "icons": { "128": "logo.png" },
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
-      "css": ["youtube.css"]
+      "css": ["youtube.css"],
+      "js": ["js/index.js"]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_title": "YT Clickbait Blocker",
+    "default_popup": "options.html"
+  }
 }
