@@ -11,8 +11,13 @@
       "js": ["js/index.js"]
     }
   ],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": true
+  },
   "browser_action": {
     "default_title": "YT Clickbait Blocker",
     "default_popup": "options.html"
-  }
+  },
+  "permissions": ["storage", "tabs", "*://www.youtube.com/*"]
 }
