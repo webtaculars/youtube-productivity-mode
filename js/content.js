@@ -2,7 +2,9 @@ var uncheckedPages = {
   home: false,
   channels: false,
   subscriptions: false,
-  history: false
+  history: false,
+  search: false,
+  trending: false
 };
 
 chrome.runtime.onMessage.addListener(changeValue);
@@ -22,7 +24,7 @@ function changeValue(message) {
 
   chrome.storage.sync.set({
     pages: uncheckedPages,
-    blockAds: true
+    blockAds: message.blockAds
   });
   chrome.runtime.onMessage.removeListener(changeValue);
 }

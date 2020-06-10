@@ -7,21 +7,25 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>YT Clickbait Blocker</title>
+    <title>YouTube Clickbait Blocker</title>
     <style>
       body {
-        width: 500px;
+        width: 550px;
         margin: 0;
         font-family: system-ui, sans-serif;
       }
 
       .container {
         margin: 0 8px;
+        flex-direction: column;
+        display: flex;
       }
 
       .rowContainer {
         width: 100%;
-        height: 100px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       .item > p {
@@ -29,11 +33,16 @@
       }
 
       .item {
-        width: 25%;
+        width: 33.33%;
         float: left;
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .label {
+        margin-left: 10px;
       }
 
       #header {
@@ -58,16 +67,14 @@
     <header id="header">
       <img src="logo.png" width="30" height="30" />
       <h2>
-        YT Clickbait Blocker
+        YouTube Clickbait Blocker
       </h2>
     </header>
 
     <div class="container">
       <div class="rowContainer">
-        <h3 class="optionHeading">Blur thumbnail in these pages:</h3>
+        <h3 class="optionHeading">Blur thumbnails on these pages:</h3>
         <div class="item">
-          <p>Home/Trending</p>
-          <label for="home"></label>
           <input
             type="checkbox"
             value="home"
@@ -75,10 +82,19 @@
             id="home"
             name="pages"
           />
+          <p class="label">Home Page</p>
         </div>
         <div class="item">
-          <p>Subscription Page</p>
-          <label for="subscriptions"></label>
+          <input
+            type="checkbox"
+            value="home"
+            class="pages"
+            id="home"
+            name="pages"
+          />
+          <p class="label">Trending Page</p>
+        </div>
+        <div class="item">
           <input
             type="checkbox"
             value="subscriptions"
@@ -86,10 +102,9 @@
             id="subscriptions"
             name="pages"
           />
+          <p class="label">Subscription Page</p>
         </div>
         <div class="item">
-          <p>Channel Page</p>
-          <label for="channels"></label>
           <input
             type="checkbox"
             value="channels"
@@ -97,10 +112,19 @@
             id="channels"
             name="pages"
           />
+          <p class="label">Channel Page</p>
         </div>
         <div class="item">
-          <p>History Page</p>
-          <label for="history"></label>
+          <input
+            type="checkbox"
+            value="search"
+            class="pages"
+            id="search"
+            name="pages"
+          />
+          <p class="label">Search Page</p>
+        </div>
+        <div class="item">
           <input
             type="checkbox"
             value="history"
@@ -108,6 +132,30 @@
             id="history"
             name="pages"
           />
+          <p class="label">History Page</p>
+        </div>
+      </div>
+      <div class="rowContainer">
+        <h3 class="optionHeading">Auto skip ads:</h3>
+        <div class="item">
+          <input
+            type="radio"
+            value="enable"
+            class="blockAds"
+            id="enable"
+            name="blockAds"
+          />
+          <p class="label">Enable</p>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            value="disable"
+            class="blockAds"
+            id="disable"
+            name="blockAds"
+          />
+          <p class="label">Disable</p>
         </div>
       </div>
       <div class="buttonContainer">

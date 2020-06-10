@@ -3,10 +3,20 @@
   --blur-value-channels: blur(0px);
   --blur-value-subscriptions: blur(0px);
   --blur-value-history: blur(0px);
+  --blur-value-search: blur(0px);
+  --blur-value-trending: blur(0px);
 }
 
 .ytd-thumbnail > .yt-img-shadow {
-  filter: blur(0px);
+  filter: blur(10px);
+}
+
+.ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-trending);
+}
+
+.ytd-search .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-search);
 }
 
 [page-subtype="home"] .ytd-thumbnail > .yt-img-shadow {
