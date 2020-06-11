@@ -11,7 +11,6 @@ chrome.storage.sync.get(["pages", "blockAds"], function(storage) {
   Object.keys(storage.pages).map(item => {
     if (storage.pages[item]) blur(item, "10px");
   });
-  console.log(storage.blockAds);
   if (storage.blockAds) {
     enableBlockAds();
   }
@@ -31,5 +30,5 @@ var enableBlockAds = () => {
     )) {
       button.click();
     }
-  }, 3000);
+  }, 200);
 };
