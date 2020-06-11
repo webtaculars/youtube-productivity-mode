@@ -19,5 +19,6 @@
     "default_title": "YouTube™ Clickbait Blocker",
     "default_popup": "options.html"
   },
-  "permissions": ["storage", "*://www.youtube.com/*"]
+  "permissions": ["storage", "*://www.youtube.com/*"],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }

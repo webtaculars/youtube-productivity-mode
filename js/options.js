@@ -17,7 +17,10 @@ const applyChanges = () => {
           checkedValues: values,
           blockAds: blockAds[0].value === "enable" ? true : false
         });
-        window.close();
+        sendClickAnalytics(values, blockAds[0].value);
+        setTimeout(() => {
+          window.close();
+        }, 200);
       }
     );
   });
@@ -44,3 +47,23 @@ chrome.storage.sync.get(["pages", "blockAds"], function(storage) {
     }
   });
 });
+
+var _gaq = _gaq || [];
+_gaq.push(["_setAccount", "UA-XXXXXXXXX"]);
+_gaq.push(["_trackEvent", "option.html", "openPopup"]);
+
+(function() {
+  var ga = document.createElement("script");
+  ga.type = "text/javascript";
+  ga.async = true;
+  ga.src = "https://ssl.google-analytics.com/ga.js";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+
+var sendClickAnalytics = (pages = [], blockAds) => {
+  for (var i = 0; i < pages.length; i++) {
+    _gaq.push(["_trackEvent", pages[i], "pageBlur"]);
+  }
+  _gaq.push(["_trackEvent", blockAds, "blockAds"]);
+};
