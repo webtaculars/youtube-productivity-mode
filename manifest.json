@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "YouTube Clickbait Blocker",
-  "description": "Blur Clickbait Thumbnails and Block Ads on YouTube",
+  "name": "YouTube™ Clickbait Blocker",
+  "description": "Blur Clickbait Thumbnails and Block Ads on YouTube™",
   "version": "1.2",
   "icons": { "128": "logo.png" },
   "content_scripts": [
@@ -16,7 +16,7 @@
     "persistent": true
   },
   "browser_action": {
-    "default_title": "YouTube Clickbait Blocker",
+    "default_title": "YouTube™ Clickbait Blocker",
     "default_popup": "options.html"
   },
   "permissions": ["storage", "*://www.youtube.com/*"]
