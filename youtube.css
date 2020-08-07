@@ -5,18 +5,11 @@
   --blur-value-history: blur(0px);
   --blur-value-search: blur(0px);
   --blur-value-trending: blur(0px);
+  --blur-value-related: blur(0px);
 }
 
 .ytd-thumbnail > .yt-img-shadow {
-  filter: blur(10px);
-}
-
-.ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
-  filter: var(--blur-value-trending);
-}
-
-.ytd-search .ytd-thumbnail > .yt-img-shadow {
-  filter: var(--blur-value-search);
+  filter: blur(0px);
 }
 
 [page-subtype="home"] .ytd-thumbnail > .yt-img-shadow {
@@ -33,4 +26,21 @@
 
 [page-subtype="history"] .ytd-thumbnail > .yt-img-shadow {
   filter: var(--blur-value-history);
+}
+
+.ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-trending);
+}
+
+.ytd-search .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-search);
+}
+
+#related .ytd-thumbnail > .yt-img-shadow {
+  filter: var(--blur-value-related);
+}
+
+#player-ads,
+#masthead-ad {
+  display: none !important;
 }

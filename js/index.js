@@ -1,12 +1,3 @@
-var pages = {
-  home: true,
-  channels: true,
-  subscriptions: true,
-  history: true,
-  search: true,
-  trending: true
-};
-
 chrome.storage.sync.get(["pages", "blockAds"], function(storage) {
   Object.keys(storage.pages).map(item => {
     if (storage.pages[item]) blur(item, "10px");

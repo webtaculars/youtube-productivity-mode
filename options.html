@@ -7,7 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>YouTube™ Clickbait Blocker</title>
+    <title>YouTube™ Productivity Mode</title>
     <style>
       body {
         width: 550px;
@@ -22,7 +22,6 @@
       }
 
       .rowContainer {
-        width: 100%;
         padding-bottom: 20px;
         padding-left: 10px;
         padding-right: 10px;
@@ -51,6 +50,7 @@
       }
 
       .buttonContainer {
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -61,17 +61,94 @@
         margin-top: 0;
         margin-bottom: 0;
       }
+
+      #modeText {
+        color: limegreen;
+      }
+
+      .button {
+        border-radius: 4px;
+        background-color: rgb(255, 2, 0);
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: "\00bb";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
     </style>
   </head>
   <body>
     <header id="header">
       <img src="logo.png" width="30" height="30" />
       <h2>
-        YouTube™ Clickbait Blocker
+        YouTube™ Productivity Mode
       </h2>
     </header>
 
     <div class="container">
+      <div class="rowContainer">
+        <h3 class="optionHeading">Choose mode of browsing YouTube™:</h3>
+        <div class="item">
+          <input
+            type="radio"
+            value="leisure"
+            class="modes"
+            id="leisure"
+            name="modes"
+          />
+          <p class="label">Leisure Mode</p>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            value="productivity"
+            class="modes"
+            id="productivity"
+            name="modes"
+          />
+          <p class="label">Productivity Mode</p>
+        </div>
+        <div class="item">
+          <input
+            type="radio"
+            value="custom"
+            class="modes"
+            id="custom"
+            name="modes"
+          />
+          <p class="label">Custom Mode</p>
+        </div>
+        <p id="modeText"></p>
+      </div>
       <div class="rowContainer">
         <h3 class="optionHeading">Blur thumbnails on these pages:</h3>
         <div class="item">
@@ -127,6 +204,16 @@
         <div class="item">
           <input
             type="checkbox"
+            value="related"
+            class="pages"
+            id="related"
+            name="pages"
+          />
+          <p class="label">Related Videos</p>
+        </div>
+        <div class="item">
+          <input
+            type="checkbox"
             value="history"
             class="pages"
             id="history"
@@ -159,8 +246,8 @@
         </div>
       </div>
       <div class="buttonContainer">
-        <button id="applyButton">
-          Apply
+        <button class="button" id="applyButton">
+          <span>Apply</span>
         </button>
       </div>
     </div>

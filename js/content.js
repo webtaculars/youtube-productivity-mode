@@ -4,12 +4,20 @@ var uncheckedPages = {
   subscriptions: false,
   history: false,
   search: false,
-  trending: false
+  trending: false,
+  related: false
+};
+
+var uncheckedModes = {
+  productivity: false,
+  leisure: false,
+  custom: false
 };
 
 chrome.runtime.onMessage.addListener(changeValue);
 
 function changeValue(message) {
+  uncheckedModes[message.mode] = true;
   message.checkedValues.forEach(item => {
     uncheckedPages[item] = true;
   });
@@ -23,6 +31,7 @@ function changeValue(message) {
   });
 
   chrome.storage.sync.set({
+    modes: uncheckedModes,
     pages: uncheckedPages,
     blockAds: message.blockAds
   });
