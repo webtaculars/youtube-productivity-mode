@@ -1,7 +1,7 @@
 var modes = {
   productivity: false,
-  leisure: true,
-  custom: false
+  leisure: false,
+  custom: true
 };
 
 var productivityPages = {
@@ -11,10 +11,10 @@ var productivityPages = {
   history: false,
   search: false,
   trending: false,
-  related: false
+  related: true
 };
 
-chrome.runtime.onInstalled.addListener(function({ reason }) {
+chrome.runtime.onInstalled.addListener(function ({ reason }) {
   if (reason === "install") {
     chrome.storage.sync.set({
       modes: modes,

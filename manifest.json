@@ -2,23 +2,36 @@
   "manifest_version": 2,
   "name": "YouTube™ Productivity Mode",
   "description": "Experience YouTube™ in Productivity Mode",
-  "version": "1.3",
-  "icons": { "128": "logo.png" },
+  "version": "2.2",
+  "icons": {
+    "128": "logo.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://*.youtube.com/*"],
-      "css": ["youtube.css"],
-      "js": ["js/index.js"]
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "css": [
+        "youtube.css"
+      ],
+      "js": [
+        "js/index.js"
+      ]
     }
   ],
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": [
+      "js/background.js"
+    ],
     "persistent": true
   },
   "browser_action": {
     "default_title": "YouTube™ Productivity Mode",
     "default_popup": "options.html"
   },
-  "permissions": ["storage", "*://www.youtube.com/*"],
+  "permissions": [
+    "storage",
+    "*://www.youtube.com/*"
+  ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
