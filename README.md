@@ -1,1 +1,2 @@
-# Blur Youtube Thumbnails
+# YouTube™ Productivity Mode
+
