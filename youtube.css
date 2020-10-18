@@ -16,15 +16,15 @@
   filter: var(--blur-value-home);
 }
 
-[page-subtype="channels"] .ytd-thumbnail > .yt-img-shadow {
+[page-subtype="channels"] .ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
   filter: var(--blur-value-channels);
 }
 
-[page-subtype="subscriptions"] .ytd-thumbnail > .yt-img-shadow {
+[page-subtype="subscriptions"] .ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
   filter: var(--blur-value-subscriptions);
 }
 
-[page-subtype="history"] .ytd-thumbnail > .yt-img-shadow {
+[page-subtype="history"] .ytd-item-section-renderer .ytd-thumbnail > .yt-img-shadow {
   filter: var(--blur-value-history);
 }
 
