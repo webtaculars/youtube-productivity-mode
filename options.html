@@ -1,256 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>YouTube™ Productivity Mode</title>
     <style>
-      body {
-        width: 550px;
-        margin: 0;
-        font-family: system-ui, sans-serif;
-      }
-
-      .container {
-        margin: 0 8px;
-        flex-direction: column;
-        display: flex;
-      }
-
-      .rowContainer {
-        padding-bottom: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      .item > p {
-        text-align: center;
-      }
-
-      .item {
-        width: 33.33%;
-        float: left;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: flex-start;
-      }
-
-      .label {
-        margin-left: 10px;
-      }
-
-      #header {
-        text-align: center;
-        padding: 10px;
-      }
-
-      .buttonContainer {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        padding-bottom: 20px;
-      }
-
-      .optionHeading {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      #modeText {
-        color: limegreen;
-      }
-
-      .button {
-        border-radius: 4px;
-        background-color: rgb(255, 2, 0);
-        border: none;
-        color: #ffffff;
-        text-align: center;
-        font-size: 16px;
-        padding: 10px;
-        width: 100px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-      }
-
-      .button span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-      }
-
-      .button span:after {
-        content: "\00bb";
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-      }
-
-      .button:hover span {
-        padding-right: 25px;
-      }
-
-      .button:hover span:after {
-        opacity: 1;
-        right: 0;
-      }
+        body {
+            width: 550px;
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+        
+        .container {
+            margin: 0 8px;
+            flex-direction: column;
+            display: flex;
+        }
+        
+        .rowContainer {
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .item>p {
+            text-align: center;
+        }
+        
+        .item {
+            width: 33.33%;
+            float: left;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        
+        .label {
+            margin-left: 10px;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .buttonContainer {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding-bottom: 20px;
+        }
+        
+        .optionHeading {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        #modeText {
+            color: limegreen;
+        }
+        
+        .button {
+            border-radius: 4px;
+            background-color: rgb(255, 2, 0);
+            border: none;
+            color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: "\00bb";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
+        .bmc-container {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bmc-btn-container {
+            margin-left: 5px;
+        }
+        
+        .bmc-container .bmc-btn {
+            height: 30px;
+            font-size: 18px;
+            padding: 0px 5px;
+            border-radius: 0;
+        }
+        
+        .bmc-container .bmc-btn svg {
+            height: 20px !important;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <header id="header">
-      <img src="logo.png" width="30" height="30" />
-      <h2>
-        YouTube™ Productivity Mode
-      </h2>
+        <img src="logo.png" width="30" height="30" />
+        <h2>
+            YouTube™ Productivity Mode
+        </h2>
     </header>
 
     <div class="container">
-      <div class="rowContainer">
-        <h3 class="optionHeading">Choose mode of browsing YouTube™:</h3>
-        <div class="item">
-          <input
-            type="radio"
-            value="leisure"
-            class="modes"
-            id="leisure"
-            name="modes"
-          />
-          <p class="label">Leisure Mode</p>
+        <div class="rowContainer">
+            <h3 class="optionHeading">Choose mode of browsing YouTube™:</h3>
+            <div class="item">
+                <input type="radio" value="leisure" class="modes" id="leisure" name="modes" />
+                <p class="label">Leisure Mode</p>
+            </div>
+            <div class="item">
+                <input type="radio" value="productivity" class="modes" id="productivity" name="modes" />
+                <p class="label">Productivity Mode</p>
+            </div>
+            <div class="item">
+                <input type="radio" value="custom" class="modes" id="custom" name="modes" />
+                <p class="label">Custom Mode</p>
+            </div>
+            <p id="modeText"></p>
         </div>
-        <div class="item">
-          <input
-            type="radio"
-            value="productivity"
-            class="modes"
-            id="productivity"
-            name="modes"
-          />
-          <p class="label">Productivity Mode</p>
+        <div class="rowContainer">
+            <h3 class="optionHeading">Blur thumbnails on these pages:</h3>
+            <div class="item">
+                <input type="checkbox" value="home" class="pages" id="home" name="pages" />
+                <p class="label">Home Page</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="trending" class="pages" id="trending" name="pages" />
+                <p class="label">Trending Page</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="subscriptions" class="pages" id="subscriptions" name="pages" />
+                <p class="label">Subscription Page</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="channels" class="pages" id="channels" name="pages" />
+                <p class="label">Channel Page</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="search" class="pages" id="search" name="pages" />
+                <p class="label">Search Page</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="related" class="pages" id="related" name="pages" />
+                <p class="label">Related Videos</p>
+            </div>
+            <div class="item">
+                <input type="checkbox" value="history" class="pages" id="history" name="pages" />
+                <p class="label">History Page</p>
+            </div>
         </div>
-        <div class="item">
-          <input
-            type="radio"
-            value="custom"
-            class="modes"
-            id="custom"
-            name="modes"
-          />
-          <p class="label">Custom Mode</p>
+        <div class="rowContainer">
+            <h3 class="optionHeading">Auto skip ads:</h3>
+            <div class="item">
+                <input type="radio" value="enable" class="blockAds" id="enable" name="blockAds" />
+                <p class="label">Enable</p>
+            </div>
+            <div class="item">
+                <input type="radio" value="disable" class="blockAds" id="disable" name="blockAds" />
+                <p class="label">Disable</p>
+            </div>
         </div>
-        <p id="modeText"></p>
-      </div>
-      <div class="rowContainer">
-        <h3 class="optionHeading">Blur thumbnails on these pages:</h3>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="home"
-            class="pages"
-            id="home"
-            name="pages"
-          />
-          <p class="label">Home Page</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="trending"
-            class="pages"
-            id="trending"
-            name="pages"
-          />
-          <p class="label">Trending Page</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="subscriptions"
-            class="pages"
-            id="subscriptions"
-            name="pages"
-          />
-          <p class="label">Subscription Page</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="channels"
-            class="pages"
-            id="channels"
-            name="pages"
-          />
-          <p class="label">Channel Page</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="search"
-            class="pages"
-            id="search"
-            name="pages"
-          />
-          <p class="label">Search Page</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="related"
-            class="pages"
-            id="related"
-            name="pages"
-          />
-          <p class="label">Related Videos</p>
-        </div>
-        <div class="item">
-          <input
-            type="checkbox"
-            value="history"
-            class="pages"
-            id="history"
-            name="pages"
-          />
-          <p class="label">History Page</p>
-        </div>
-      </div>
-      <div class="rowContainer">
-        <h3 class="optionHeading">Auto skip ads:</h3>
-        <div class="item">
-          <input
-            type="radio"
-            value="enable"
-            class="blockAds"
-            id="enable"
-            name="blockAds"
-          />
-          <p class="label">Enable</p>
-        </div>
-        <div class="item">
-          <input
-            type="radio"
-            value="disable"
-            class="blockAds"
-            id="disable"
-            name="blockAds"
-          />
-          <p class="label">Disable</p>
-        </div>
-      </div>
-      <div class="buttonContainer">
-        <button class="button" id="applyButton">
+        <div class="buttonContainer">
+            <button class="button" id="applyButton">
           <span>Apply</span>
         </button>
-      </div>
+            <div class="bmc-container">
+                <div class="bmc-text">Do you like this extension? Contribute to it: </div>
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="webtaculars" data-color="#FF5F5F" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000" data-font-color="#fff" data-coffee-color="#fd0" ></script>
+            </div>
+        </div>
     </div>
     <script src="js/options.js"></script>
-  </body>
+</body>
+
 </html>
