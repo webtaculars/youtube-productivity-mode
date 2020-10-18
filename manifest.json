@@ -1,37 +1,35 @@
 {
-  "manifest_version": 2,
-  "name": "YouTube™ Productivity Mode",
-  "description": "Experience YouTube™ in Productivity Mode",
-  "version": "2.2",
-  "icons": {
-    "128": "logo.png"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.youtube.com/*"
-      ],
-      "css": [
-        "youtube.css"
-      ],
-      "js": [
-        "js/index.js"
-      ]
-    }
-  ],
-  "background": {
-    "scripts": [
-      "js/background.js"
+    "manifest_version": 2,
+    "name": "YouTube™ Productivity Mode",
+    "description": "Experience YouTube™ in Productivity Mode",
+    "version": "2.2",
+    "icons": {
+        "128": "logo.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://*.youtube.com/*"
+        ],
+        "css": [
+            "youtube.css"
+        ],
+        "js": [
+            "js/index.js"
+        ]
+    }],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "YouTube™ Productivity Mode",
+        "default_popup": "options.html"
+    },
+    "permissions": [
+        "storage",
+        "*://www.youtube.com/*"
     ],
-    "persistent": true
-  },
-  "browser_action": {
-    "default_title": "YouTube™ Productivity Mode",
-    "default_popup": "options.html"
-  },
-  "permissions": [
-    "storage",
-    "*://www.youtube.com/*"
-  ],
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js; object-src 'self'"
 }
