@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "YouTube™ Productivity Mode",
     "description": "Experience YouTube™ in Productivity Mode",
-    "version": "2.2",
+    "version": "2.3",
     "icons": {
         "128": "logo.png"
     },
